@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Card from "react-bootstrap/Card";
 
-function App() {
+const IMAGES = [
+  {
+    orderNumber: 1,
+    url: "https://cdn.mos.cms.futurecdn.net/a4Bxq6zWEH33k8sS6oUEES.jpg",
+    caption: "test text",
+  },
+];
+
+function App(props) {
+  const [images, setImages] = useState(IMAGES);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
   );
 }
 
