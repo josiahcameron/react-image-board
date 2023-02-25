@@ -3,26 +3,35 @@ import ImageList from "./ImageList";
 import { useState } from "react";
 
 const INITIAL_DATA = [
-  {
-    url: "www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.cntraveler.com%2Fphotos%2F571945e380cf3e034f974b7a%2Fmaster%2Fw_2048%2Ch_1536%2Cc_limit%2Fwaterfalls-Skogafoss-GettyImages-94985528.jpg&imgrefurl=https%3A%2F%2Fwww.cntraveler.com%2Fgalleries%2F2013-04-29%2Fphotos-amazing-waterfalls-around-the-world&tbnid=tcuxmxwwFuQPhM&vet=12ahUKEwjM1o_9wvT8AhWQr3IEHeiEANIQMygCegUIARDiAQ..i&docid=29jvEOKocHanFM&w=2048&h=1536&q=waterfalls&ved=2ahUKEwjM1o_9wvT8AhWQr3IEHeiEANIQMygCegUIARDiAQ",
-    caption: "an image",
-  },
+	{
+		url: "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+		caption: "an image",
+	},
+	{
+		url: "https://images.pexels.com/photos/5875844/pexels-photo-5875844.jpeg?auto=compress&cs=tinysrgb&w=1600",
+		caption: "Another Image",
+	},
+	{
+		url: "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=1600",
+		caption: "Another Image",
+	},
 ];
 
 function ImageBoard() {
-  const [images, setImages] = useState(INITIAL_DATA);
+	const [images, setImages] = useState(INITIAL_DATA);
 
-  //   defines a method that takes an image and use it to update the images currently onstate with the image board component; updates using set image, when called it takes the images for it; spreads out image array and adds on the new image
-  const addImage = (image) => {
-    setImages([...images, image]);
-  };
+	//   defines a method that takes an image and use it to update the images currently onstate with the image board component; updates using set image, when called it takes the images for it; spreads out image array and adds on the new image
+	const addImage = (image) => {
+		setImages([...images, image]);
+	};
 
-  return (
-    <div>
-      <ImageForm addImage={addImage} />
-      <ImageList images={images} />
-    </div>
-  );
+	return (
+		<div>
+			<h1>Image Board</h1>
+			<ImageForm addImage={addImage} />
+			<ImageList images={images} />
+		</div>
+	);
 }
 
 export default ImageBoard;
